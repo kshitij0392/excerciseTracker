@@ -14,6 +14,8 @@ import { NewTrainingComponent } from "./training/new-training/new-training.compo
 import { PastTrainingsComponent } from "./training/past-trainings/past-trainings.component";
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { AppRoutingModule } from "./app-routing.module";
+import { StopTrainingComponent } from "./training/current-training/stop-training.component";
+import { SuccessTrainingComponent } from "./training/current-training/success-training.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { AppRoutingModule } from "./app-routing.module";
     CurrentTrainingComponent,
     NewTrainingComponent,
     PastTrainingsComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    StopTrainingComponent,
+    SuccessTrainingComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +40,7 @@ import { AppRoutingModule } from "./app-routing.module";
     ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [StopTrainingComponent, SuccessTrainingComponent]
 })
 export class AppModule {}
