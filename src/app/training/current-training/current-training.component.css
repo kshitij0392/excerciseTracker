@@ -1,0 +1,14 @@
+.current-training-progress {
+  padding: 30px;
+}
+
+tracker-card-content {
+  padding: 20px;
+}
+
+.training-icon {
+  position: absolute;
+  top: 28.5%;
+  font-size: 40px;
+  left: 45.5%;
+}

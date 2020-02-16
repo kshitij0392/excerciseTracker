@@ -1,3 +1,46 @@
-<p>
-  current-training works!
-</p>
+<section class="current-training-progress" fxLayout fxLayoutAlign="center">
+  <mat-card fxFlex="400px" fsFlex.xs="100%" fxLayoutGap="15px">
+    <mat-card-title fxLayoutAlign="center">
+      Progress Tracker
+    </mat-card-title>
+    <mat-card-content
+      fxLayoutAlign="center center"
+      fxLayout="column"
+      fxLayoutGap="15px"
+    >
+      <mat-progress-spinner mode="determinate" [value]="progress">
+      </mat-progress-spinner>
+      <mat-icon
+        *ngIf="!isExcerciseSuccess && excerciseState == 'Pause'"
+        fxLayoutAlign="center center"
+        class="training-icon"
+      >
+        directions_run
+      </mat-icon>
+      <mat-icon
+        *ngIf="isExcerciseSuccess"
+        fxLayoutAlign="center center"
+        class="training-icon"
+      >
+        done_all
+      </mat-icon>
+      <mat-icon
+        *ngIf="excerciseState == 'Resume'"
+        fxLayoutAlign="center center"
+        class="training-icon"
+      >
+        pause
+      </mat-icon>
+      <h1>{{ progress }}%</h1>
+      <p>Keep on Going, you can do it!</p>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="center">
+      <button mat-raised-button color="accent" (click)="stopTraining()">
+        Stop
+      </button>
+      <button mat-raised-button (click)="pauseTraining()">
+        {{ excerciseState }}
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</section>
